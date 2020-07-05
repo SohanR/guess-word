@@ -1,0 +1,36 @@
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(16, 20, 34);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    margin: 0;
+    overflow: hidden;
+
+    h1{
+        margin: 20px 0 0;
+    }
+
+    .figure-container{
+        fill:transparent;
+        stroke:white;
+        stroke-width: 4px;
+        stroke-linecap: round;
+
+
+        .figure-part{
+            display: none;
+        }
+    }
+    
+}
+
+
