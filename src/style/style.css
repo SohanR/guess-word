@@ -26,14 +26,72 @@ body h1 {
   margin: 20px 0 0;
 }
 
-body .figure-container {
+body .game-container {
+  padding: 20px 30px;
+  position: relative;
+  margin: auto;
+  height: 350px;
+  width: 450px;
+}
+
+body .game-container .figure-container {
   fill: transparent;
   stroke: white;
   stroke-width: 4px;
   stroke-linecap: round;
 }
 
-body .figure-container .figure-part {
+body .game-container .figure-container .figure-part {
   display: none;
+}
+
+body .game-container .wrong-letter-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: right;
+}
+
+body .game-container .wrong-letter-container p {
+  margin: 0 0 5px;
+}
+
+body .game-container .wrong-letter-container span {
+  font-size: 24px;
+}
+
+body .game-container .word {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+body .game-container .word .letter {
+  border-bottom: 3px solid #6293ee;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 3px;
+  height: 50px;
+  width: 20px;
 }
 /*# sourceMappingURL=style.css.map */
