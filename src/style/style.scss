@@ -1,11 +1,15 @@
-
+$bg:rgb(16, 20, 34);
+$letter-border:rgb(0, 62, 177);
+$popup-bg:rgba( 0, 0, 0, 0.3);
+$shadow:rgba(0,0,0,0.1);
+$popup-color:rgb(45, 63, 98);
 
 *{
     box-sizing: border-box;
 }
 
 body{
-    background-color: rgb(16, 20, 34);
+    background-color: $bg;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
@@ -65,7 +69,7 @@ body{
             transform: translateX(-50%);
 
             .letter{
-                 border-bottom: 3px solid rgb(98, 147, 238);
+                 border-bottom: 3px solid $letter-border;
                  display: inline-flex;
                  font-size: 30px;
                  align-items: center;
@@ -76,7 +80,65 @@ body{
             }
         }
     }
+
+    .popup-container{
+        background-color: $popup-bg;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+       // display: flex;
+       display: none;
+        align-items: center;
+        justify-content: center;
+
+        .popup{
+            background: $popup-color;
+            border-radius: 5px;
+            box-shadow: 0 15px 10px 3px $shadow;
+            padding: 20px;
+            text-align: center;        
+            
+
+                button{
+                    cursor: pointer;
+                    background-color: white;
+                    color: $popup-color;
+                    border: 0;
+                    margin-top: 20px;
+                    padding: 12px 20px;
+                    font-size: 16px;
+                }
+
+                button:active{
+                    transform: scale(0.98);
+                }
+
+                button:focus{
+                    outline: 0;
+                }
+        }
+    } 
+
+    .notification-container{
+        background-color: $shadow;
+        border-radius: 10px 10px 0 0;
+        padding: 15px 20px;
+        position: absolute;
+        bottom: -50px;
+        transition: transform 0.3s ease-in-out;
+
+            p{
+                margin: 0;
+            }
+
+        
+    }
     
+    .notification-container.show{
+        transform: translateY(-50px);
+    }
     
 }
 

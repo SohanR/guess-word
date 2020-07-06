@@ -79,7 +79,7 @@ body .game-container .word {
 }
 
 body .game-container .word .letter {
-  border-bottom: 3px solid #6293ee;
+  border-bottom: 3px solid #003eb1;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -93,5 +93,70 @@ body .game-container .word .letter {
   margin: 0 3px;
   height: 50px;
   width: 20px;
+}
+
+body .popup-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .popup-container .popup {
+  background: #2d3f62;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+body .popup-container .popup button {
+  cursor: pointer;
+  background-color: white;
+  color: #2d3f62;
+  border: 0;
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+body .popup-container .popup button:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+body .popup-container .popup button:focus {
+  outline: 0;
+}
+
+body .notification-container {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px 10px 0 0;
+  padding: 15px 20px;
+  position: absolute;
+  bottom: -50px;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+body .notification-container p {
+  margin: 0;
+}
+
+body .notification-container.show {
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
 }
 /*# sourceMappingURL=style.css.map */
