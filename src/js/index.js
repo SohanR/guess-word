@@ -12,7 +12,7 @@ const words = ['place', 'fear', 'amazing', 'purple', 'flagrant', 'judge', 'equal
 
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
-const correctLetters = ['p', 'l', 'a', 'c', 'e'];
+const correctLetters = [];
 const wrongLetters = [];
 
 
@@ -42,5 +42,53 @@ function displayWord() {
     }
 
 }
+
+function showNotification() {
+    notification.classList.add('show');
+
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 2000);
+}
+
+function updateWrongLetters() {
+    console.log("wrong letter");
+
+}
+
+
+//input letter
+
+window.addEventListener('keydown', e => {
+
+    if (e.keyCode >= 65 & e.keyCode <= 90) {
+        const letter = e.key;
+
+        if (selectedWord.includes(letter)) {
+            if (!correctLetters.includes(letter)) {
+                correctLetters.push(letter);
+
+                displayWord();
+            } else {
+                showNotification();
+            }
+        } else {
+            if (!wrongLetters.includes(letter)) {
+                wrongLetters.push(letter);
+
+                updateWrongLetters();
+            } else {
+                showNotification();
+            }
+        }
+    }
+
+});
+
+
+
+
+
+
 
 displayWord();
