@@ -114,6 +114,25 @@ window.addEventListener('keydown', e => {
 
 
 
+//play again
+
+playButton.addEventListener('click', () => {
+
+    correctLetters.splice(0);
+    wrongLetters.splice(0)
+
+    selectedWord = words[Math.floor(Math.random() * words.length)];
+
+    displayWord();
+
+    updateWrongLetters();
+
+    popup.style.display = 'none';
+
+})
+
+
+
 
 
 
