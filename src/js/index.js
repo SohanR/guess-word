@@ -37,7 +37,7 @@ function displayWord() {
     const innerWord = word.innerText.replace(/\n/g, '')
 
     if (innerWord === selectedWord) {
-        finalMessage.innerText = 'Congratulation! You Won!';
+        finalMessage.innerText = 'Congratulations! You Won!';
         popup.style.display = 'flex';
     }
 
@@ -51,8 +51,35 @@ function showNotification() {
     }, 2000);
 }
 
+
+
+//wrong letters
+
 function updateWrongLetters() {
-    console.log("wrong letter");
+
+    wrongLetter.innerHTML = `
+        ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+        ${wrongLetters.map(letter => `<span>${letter}</span>`)}        
+    `;
+
+    //display parts
+
+    figurParts.forEach((part, index) => {
+        const error = wrongLetters.length;
+
+        if (index < error) {
+            part.style.display = 'block';
+        } else {
+            part.style.display = 'none';
+        }
+    });
+
+    //check lost
+
+    if (wrongLetters.length === figurParts.length) {
+        finalMessage.innerText = 'You have been execution!';
+        popup.style.display = 'flex';
+    }
 
 }
 
