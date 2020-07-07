@@ -77,7 +77,7 @@ function updateWrongLetters() {
     //check lost
 
     if (wrongLetters.length === figurParts.length) {
-        finalMessage.innerText = 'You have been execution!';
+        finalMessage.innerText = 'You have been executed!';
         popup.style.display = 'flex';
     }
 
